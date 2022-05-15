@@ -44,6 +44,13 @@ fn daijirin_strip_examples(definition: &mut Vec<String>)
         definition[i] = new;
         i += 1;
     }
+
+    let mut j = 0;
+    while j < definition.len()
+    {
+        if definition[j].is_empty() { definition.remove(j); }
+        j += 1;
+    }
 }
 
 pub(crate) fn convert_daijirin(entry: &EpwingEntry) -> Option<JsonEntry>
